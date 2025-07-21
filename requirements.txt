@@ -1,0 +1,8 @@
+langchain
+langchain_groq
+langchain-openai
+uvicorn
+python-dotenv
+pandas
+numpy
+-e .
