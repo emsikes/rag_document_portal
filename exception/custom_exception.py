@@ -8,7 +8,7 @@ logger = CustomLogger().get_logger(__file__)
 
 class DocumentPortalException(Exception):
     """
-    Custome exception for Document Portal Application
+    Custom exception for Document Portal Application
     """
     def __init__(self, error_message, error_detail:sys):
         # Capture the traceback 

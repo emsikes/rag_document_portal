@@ -2,6 +2,7 @@ langchain
 langchain_community
 langchain_groq
 langchain-openai
+langchain-google-genai
 uvicorn
 python-dotenv
 pandas
