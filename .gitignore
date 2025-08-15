@@ -211,5 +211,6 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 
-# Datasets
+# Data
 datasets/
+data/
