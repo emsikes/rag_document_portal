@@ -1,10 +1,10 @@
 import io
 import sys
 from pathlib import Path
-from src.document_compare.data_ingestion import DocoumentIngestion
+from src.document_compare.data_ingestion import DocumentIngestion
 from src.document_compare.document_compare import DocumentCompareLLM
 from exception.custom_exception import DocumentPortalException
-from logger.custom_logger import CustomLogger
+
 
 def load_fake_uploaded_file(file_path: Path):
     return io.BytesIO(file_path.read_bytes())
@@ -22,7 +22,7 @@ def test_compare_documents():
             def getbuffer(self):
                 return self._buffer
             
-        comparer = DocoumentIngestion()
+        comparer = DocumentIngestion()
         ref_upload = FakeUpload(ref_path)
         act_upload = FakeUpload(act_path)
 

@@ -16,14 +16,15 @@ from langchain.output_parsers import OutputFixingParser
 class DocumentCompareLLM:
     def __init__(self):
         load_dotenv()
-        self.log = CustomLogger().get_logger(__name__)
+        # self.log = CustomLogger().get_logger(__name__)
         self.loader = ModelLoader()
         self.llm = self.loader.load_llm()
         self.parser = JsonOutputParser(pydantic_object=SummaryResponse)
-        self.fixing_prser = OutputFixingParser.from_llm(parser=self.parser, llm=self.llm)
+        self.fixing_parser = OutputFixingParser.from_llm(parser=self.parser, llm=self.llm)
         self.prompt = PROMPT_REGISTRY.get("document_compare")
+        # self.prompt = PROMPT_REGISTRY[PromptType.DOCUMENT_COMPARISIN.value]
         self.chain = self.prompt | self.llm | self.parser
-        self.log.info("DocumentCompareLLM initialized with model and parser")
+        self.log.info("DocumentCompareLLM initialized with model and parser", model=self.llm)
 
     def compare_documents(self, combined_docs: str) -> pd.DataFrame:
         """ 
