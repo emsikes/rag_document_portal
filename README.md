@@ -1,6 +1,6 @@
 # RAG Document Portal
 
-![RAG Document Portal Banner](A_header_image_for_the_"RAG_Document_Portal"_featu.png)
+![RAG Document Portal Banner]("rag_document_portal_banner")
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/)  
 [![Streamlit](https://img.shields.io/badge/streamlit-app-red.svg)](https://streamlit.io/)  
