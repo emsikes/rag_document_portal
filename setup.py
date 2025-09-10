@@ -8,7 +8,7 @@ setup(
     description="A document management portal built with FastAPI",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
-    url="https://github.com/emsikes/document_portal",
+    url="https://github.com/emsikes/rag_document_portal",
     packages=find_packages()
 )
 
