@@ -12,3 +12,6 @@ faiss-cpu
 structlog
 PyMuPDF
 -e .
+streamlit
+pytest
+langchain-core[tracing]
