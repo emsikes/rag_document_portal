@@ -29,3 +29,4 @@ structlog==25.4.0
 langchain-core[tracing]
 doc2text==0.2.4
 pytest==8.4.1
+fastapi==0.121.2

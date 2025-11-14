@@ -1,16 +1,22 @@
-# RAG Document Portal
+# RAG Document Portal  
+<img src="./rag_document_portal_banner.png" alt="drawing" hright="300" width="300"/>
+<br><br>
 
-![RAG Document Portal Banner]("rag_document_portal_banner")
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)  
+[![Python Version](https://img.shields.io/badge/python-3.9%2B-blue.svg)]()  
+[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)]()  
+[![GitHub Repo Size](https://img.shields.io/github/repo-size/emsikes/rag_document_portal.svg)](https://github.com/emsikes/rag_document_portal)
 
-[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/)  
-[![Streamlit](https://img.shields.io/badge/streamlit-app-red.svg)](https://streamlit.io/)  
-[![LangChain](https://img.shields.io/badge/LangChain-framework-lightblue.svg)](https://www.langchain.com/)  
-[![FAISS](https://img.shields.io/badge/FAISS-vector%20store-teal.svg)](https://github.com/facebookresearch/faiss)  
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)  
-[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](#-contributing)
+---
 
-A lightweight, easy-to-use **Retrieval-Augmented Generation (RAG)** powered portal for exploring, summarizing, and comparing documents through a simple web interface.  
-Built for AI developers, data engineers, and researchers who want a practical sandbox to experiment with RAG workflows.
+## 🚀 Overview  
+RAG Document Portal is a web‑based application that enables you to:  
+- Upload documents (PDFs, text files, etc)  
+- Perform summary analysis on individual documents  
+- Compare two documents side‑by‑side for differences or similarities  
+- Chat interactively with a **single** document or with **multiple** documents  
+
+This tool is designed for AI/data engineers, knowledge‑workers, and teams who want to ingest, interact with and derive insights from document collections using retrieval‑augmented generation (RAG) workflows.
 
 ---
 
@@ -24,79 +30,132 @@ Built for AI developers, data engineers, and researchers who want a practical sa
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠 Tech Stack  
 
-- **Python** – Core backend logic  
-- **Streamlit** – Interactive, lightweight web UI  
-- **LangChain** – Orchestration framework for RAG  
-- **FAISS** – Vector similarity search for retrieval  
+### **Backend & APIs**  
+- Python 3.9+  
+- FastAPI (`api/main.py`)  
+- Vector store (FAISS, Pinecone, etc.)  
+- LLM API provider (OpenAI, Anthropic, etc.)
+
+### **Frontend / UI**  
+- Streamlit (`streamlit_ui.py`)  
+- HTML/CSS templates (`templates/`)  
+- Static assets (`static/`)
+
+### **Application Logic & RAG Pipeline**  
+- **src/** — Core RAG logic, document processing, embeddings, and pipeline orchestration  
+- **exception/** — Custom exception configuration and handlers  
+
+### **Other Components**  
+- Logging utilities (`logger/`)  
+- Data models (`models/`)  
+- Notebooks (`notebooks/`)  
+- Prompt templates (`prompts/`)  
+- Utility helpers (`utils/`)  
+- Automated tests (`tests/`) 
 
 ---
 
-## 🚀 Getting Started
+## ✅ Prerequisites  
+- Python 3.9 or higher  
+- `pip` or `poetry`  
+- LLM API key (OpenAI, etc.)  
+- Optional: vector store endpoint configuration  
 
-### 1. Clone the Repository
+---
+
+## 🏁 Getting Started
+
+### 1. Clone the repository  
 ```bash
 git clone https://github.com/emsikes/rag_document_portal.git
 cd rag_document_portal
 ```
 
-### 2. Install Dependencies
+### 2. Install dependencies  
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Run the Application
+Or using Poetry:
+
+```bash
+poetry install
+```
+
+### 3. Configure environment variables  
+Create a `.env` file or update config settings:
+
+```
+OPENAI_API_KEY=your_key
+VECTOR_STORE_ENDPOINT=your_value
+```
+
+### 4. Run the backend API  
+```bash
+uvicorn app:app --reload
+```
+
+### 5. Run the Streamlit UI  
 ```bash
 streamlit run streamlit_ui.py
 ```
 
-The portal will be available in your browser at [http://localhost:8501](http://localhost:8501).
+### 6. Access the application  
+- API docs: http://127.0.0.1:8000/docs  
+- UI: http://localhost:8501  
 
 ---
 
-## 📂 Project Structure
-
-```plaintext
-rag_document_portal/
-├── app.py              # Core backend orchestration
-├── streamlit_ui.py     # Web UI entry point
-├── requirements.txt    # Project dependencies
-├── data/               # Example documents
-└── utils/              # Helper functions and utilities
+## 🧪 Running Tests  
+```bash
+pytest
 ```
 
 ---
 
-## 🤝 Contributing
+## 🧩 Project Structure  
+```
+├── README.md
+├── requirements.txt
+├── streamlit_ui.py
+├── setup.py
+│
+├── api/
+│   └── main.py           ← FastAPI backend entrypoint
+│
+├── src/                 ← Main RAG application logic
+│
+├── exception/           ← Custom exception configuration
+│
+├── config/
+├── logger/
+├── models/
+├── notebooks/
+├── prompts/
+├── static/
+├── templates/
+├── tests/
+└── utils/
+```
+---
 
-Contributions are welcome!  
-You can:
-- Extend retrieval models  
-- Improve summarization pipelines  
-- Enhance the UI for better workflows  
-
-Fork the repo, create a branch, and submit a pull request.
+## 🤝 Contributing  
+1. Fork the repo  
+2. Create a feature branch  
+3. Commit changes  
+4. Push  
+5. Open PR  
 
 ---
 
-## 🎯 Roadmap
-
-- [ ] Add support for additional embedding models  
-- [ ] Enable multi-format document parsing (PDF, DOCX, TXT, etc.)  
-- [ ] Improve multi-document conversation context  
-- [ ] Add authentication & user management  
+## 📄 License  
+MIT License — see LICENSE file.
 
 ---
 
-## 📜 License
+## 🎯 Contact  
+Created by **Matt Sikes**  
+GitHub: https://github.com/emsikes  
 
-This project is licensed under the [MIT License](LICENSE).  
-Feel free to use, modify, and share.
-
----
-
-## 🙌 Acknowledgements
-
-Inspired by the growing ecosystem of **RAG applications**,  
-built to make document interaction more intuitive and powerful.
